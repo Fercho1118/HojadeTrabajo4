@@ -1,14 +1,30 @@
+/**
+ * Clase ListaSimplementeEncadenada
+ * Felipe Aguilar - 23195
+ * Fernando Rueda - 23748
+ * Clase que implementa la interfaz Lista utilizando una lista simplemente encadenada.
+ * @param <T> Tipo de los elementos contenidos en la lista.
+ * Fecha de creación: 21/02/2024
+ * Fecha de última modificación: 21/02/2024
+ */
+
 package uvg.edu.gt;
 
 public class ListaSimplementeEncadenada<T> implements Lista<T> {
     private Nodo<T> cabeza;
     private int size;
 
+    /**
+     * Constructor que inicializa la lista como vacía.
+     */    
     public ListaSimplementeEncadenada() {
         cabeza = null;
         size = 0;
     }
 
+    /**
+     * {@inheritDoc}
+     */  
     @Override
     public void add(T item) {
         Nodo<T> nuevoNodo = new Nodo<>(item);
@@ -24,6 +40,9 @@ public class ListaSimplementeEncadenada<T> implements Lista<T> {
         size++;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean remove(T item) {
         if (cabeza == null) return false;
@@ -44,6 +63,9 @@ public class ListaSimplementeEncadenada<T> implements Lista<T> {
         return false;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public T get(int index) {
         if (index < 0 || index >= size) {
@@ -55,7 +77,10 @@ public class ListaSimplementeEncadenada<T> implements Lista<T> {
         }
         return actual.valor;
     }
-
+    
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isEmpty() {
         return size == 0;

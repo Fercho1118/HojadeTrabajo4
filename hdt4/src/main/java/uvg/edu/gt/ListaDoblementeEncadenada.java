@@ -1,3 +1,13 @@
+/**
+ * Clase ListaDoblementeEncadenada
+ * Felipe Aguilar - 23195
+ * Fernando Rueda - 23748
+ * Clase que implementa la interfaz Lista utilizando una lista doblemente encadenada.
+ * @param <T> Tipo de los elementos contenidos en la lista.
+ * Fecha de creación: 21/02/2024
+ * Fecha de última modificación: 21/02/2024
+ */
+
 package uvg.edu.gt;
 
 public class ListaDoblementeEncadenada<T> implements Lista<T> {
@@ -5,11 +15,17 @@ public class ListaDoblementeEncadenada<T> implements Lista<T> {
     private NodoDoble<T> cola;
     private int size;
 
+    /**
+     * Constructor que inicializa la lista como vacía.
+     */    
     public ListaDoblementeEncadenada() {
         cabeza = cola = null;
         size = 0;
     }
 
+    /**
+     * {@inheritDoc}
+     */    
     @Override
     public void add(T item) {
         NodoDoble<T> nuevoNodo = new NodoDoble<>(item);
@@ -23,6 +39,9 @@ public class ListaDoblementeEncadenada<T> implements Lista<T> {
         size++;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean remove(T item) {
         if (cabeza == null) return false;
@@ -47,6 +66,9 @@ public class ListaDoblementeEncadenada<T> implements Lista<T> {
         return false;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public T get(int index) {
         if (index < 0 || index >= size) {
@@ -66,7 +88,10 @@ public class ListaDoblementeEncadenada<T> implements Lista<T> {
         }
         return actual.valor;
     }
-
+    
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isEmpty() {
         return size == 0;
